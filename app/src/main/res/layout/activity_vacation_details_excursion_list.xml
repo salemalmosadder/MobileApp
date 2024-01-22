@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.VacationDetails">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/enter_excursion_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="Enter Excursion Details"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Vacation Title" />
+
+        <EditText
+            android:id="@+id/vacation_title"
+            android:inputType="text"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:hint="Vacation Title"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Vacation Lodging" />
+
+        <EditText
+            android:id="@+id/vacation_lodging"
+            android:inputType="text"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:hint="Vacation Lodging"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Start Date" />
+
+        <EditText
+            android:id="@+id/startDate"
+            android:inputType="date"
+            android:layout_width="240dp"
+            android:layout_height="64dp"
+            android:hint="Start Date"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="End Date" />
+
+        <EditText
+            android:id="@+id/endDate"
+            android:inputType="date"
+            android:layout_width="240dp"
+            android:layout_height="59dp"
+            android:hint="End Date"/>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="Alert Date" />
+
+                    <EditText
+                        android:id="@+id/alert_date"
+                        android:inputType="none"
+                        android:layout_width="240dp"
+                        android:layout_height="59dp"
+                        android:hint="Alert Date"/>
+
+                    <Spinner
+                        android:id="@+id/excursion_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/excursion_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
