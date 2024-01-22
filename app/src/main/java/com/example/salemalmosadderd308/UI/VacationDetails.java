@@ -32,7 +32,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-
+// B2 VacationDetails created to view and edit vacations
 public class VacationDetails extends AppCompatActivity {
     EditText vacationIdText;
     EditText vacationTitleText;

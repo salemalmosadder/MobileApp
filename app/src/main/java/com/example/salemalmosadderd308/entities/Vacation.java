@@ -9,11 +9,11 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "Vacations")
 public class Vacation {
     @PrimaryKey(autoGenerate = true)
-    private int vacationId;
-    private String vacationTitle;
-    private String vacationLodging;
-    private String vacationStartDate;
-    private String vacationEndDate;
+    private int vacationId;                      //B2
+    private String vacationTitle;                //B2
+    private String vacationLodging;              //B2
+    private String vacationStartDate;            //B2
+    private String vacationEndDate;              //B2
 
 
     @Ignore

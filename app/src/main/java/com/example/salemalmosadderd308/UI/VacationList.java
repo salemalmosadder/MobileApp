@@ -18,6 +18,7 @@ import com.example.salemalmosadderd308.R;
 
 import java.util.List;
 
+//B2 VacationList created to view vacations
 public class VacationList extends AppCompatActivity {
 
     private Repository mRepository;
