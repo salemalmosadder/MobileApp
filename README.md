@@ -1,28 +1,29 @@
-<strong> **DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
+# Destination Scheduler
 
-# WESTERN GOVERNOR UNIVERSITY 
-## D308 – MOBILE APPLICATION DEVELOPMENT (ANDROID)
-Welcome to Mobile Application Development (Android)! This is an opportunity for students to create page layouts with clean navigation, design mobile application infrastructure and user interfaces, develop secure database-backed mobile applications in an object-oriented language, document solutions for application requirements with storyboards and emulators, articulate challenges in the development process, and describe alternatives methods in overcoming mobile application development problems. 
+## Description
+The Destination Scheduler app is designed to organize and schedule vacations and associated excursions. It features detailed view screens for easy data entry and saving to a local database. The app offers alert functionalities to remind users of upcoming start and end dates for both vacations and excursions. Additionally, it includes a sharing feature, allowing users to send vacation or excursion details to others.
 
-FOR SPECIFIC TASK INSTRUCTIONS AND REQUIREMENTS FOR THIS ASSESSMENT, PLEASE REFER TO THE COURSE PAGE.
-## BASIC INSTRUCTIONS
-For this assessment, you have an opportunity to test your competency as a mobile application developer. Your understanding of mobile application structure and design will help you to develop applications to meet customer requirements. This task will allow you to demonstrate your ability to apply the skills learned in the course.
+## Directions for Use
 
-## SUPPLEMENTAL RESOURCES 
-1.	How to clone a project to Android Studio using Git?
+### Vacation List Screen
+- To add a vacation, tap the button located at the bottom of the screen.
 
-> Ensure that Android Studio and Git are installed on your system.  New Project, Get from VCS button or the File/New/Project from Version Control. This will open a window  with a prompt to clone the project. Save it in a safe location for the directory and press clone. IntelliJ will prompt you for your credentials. Enter in your WGU Credentials and the project will be cloned onto your local machine.
+### Vacation Details Screen
+- Input the required information. The app includes validation checks for correct date inputs.
+- After saving, access various options (like edit or delete) by tapping the three dots in the top right corner.
 
-2. How to create a branch and start Development?
+### Adding Excursions
+- In the Vacation Details Screen, use the button at the bottom right to add excursions.
 
-- GitLab method
-> Press the '+' button located near your branch name. In the dropdown list, press the 'New branch' button. This will allow you to create a name for your branch. Once the branch has been named, you can select 'Create Branch' to push the branch to your repository.
+### Excursion Details Screen
+- Similar to vacation details, enter the necessary information here. The app checks that excursion dates align with the vacation's start and end dates.
 
-- Android Studio method
-> In Android Studio, Go to the 'Git' button on the top toolbar. Select the new branch option and create a name for the branch. Make sure checkout branch is selected and press create. You can now add a commit message and push the new branch to the local repo.
+### Managing Excursions
+- After entering the details, the menu offers several options for managing your excursions.
 
-## SUPPORT
-If you need additional support, please navigate to the course page and reach out to your course instructor.
-## FUTURE USE
-Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
+## App Version
+- Destination Scheduler is currently at version 1.0, optimized and compatible with devices running Android 7.0 (Nougat) and higher.
 
+
+## Git Repository
+- https://gitlab.com/wgu-gitlab-environment/student-repos/salmosa/d308-mobile-application-development-android.git
