@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
@@ -13,60 +13,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SalemAlmosadderD308"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+
         <receiver
             android:name=".UI.MyReceiver"
             android:enabled="true"
             android:exported="true"></receiver>
-        <activity
-            android:name=".UI.VacationAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".UI.MyReceiver"
-            android:exported="false" />
-        <activity
-            android:name=".UI.ExcursionAdapter"
-            android:exported="false" />
+
         <activity
             android:name=".UI.ExcursionDetails"
             android:exported="false"
             android:label="Excursion Details"
-            android:parentActivityName=".UI.VacationDetails" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value=""/>
+            android:parentActivityName=".UI.VacationDetails">
         </activity>
+
         <activity
             android:name=".UI.VacationDetails"
             android:exported="false"
             android:label="Vacation Details"
             android:parentActivityName=".UI.VacationList">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value=""/>
         </activity>
+
         <activity
             android:name=".UI.VacationList"
             android:exported="false"
             android:label="Vacation List"
             android:parentActivityName=".UI.MainActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value=""/>
         </activity>
+
         <activity
             android:name=".UI.MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value=""/>
-
         </activity>
 
     </application>
