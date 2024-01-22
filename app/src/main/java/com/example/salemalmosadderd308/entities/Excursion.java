@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 // Created Entity Class Excursion for B1.
 
-@Entity(tableName = "Excursions")
+@Entity(tableName = "Excursions")                   //B4. added excursion title and excursion date.
 public class Excursion {
     @PrimaryKey(autoGenerate = true)
     private int excursionId;
