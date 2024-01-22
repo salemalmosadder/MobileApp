@@ -19,7 +19,7 @@ import java.util.Locale;
 import com.example.salemalmosadderd308.R;
 import com.example.salemalmosadderd308.entities.Excursion;
 
-
+//5a. Displays a detailed view of the excursion.
 public class ExcursionAdapter extends RecyclerView.Adapter<ExcursionAdapter.ExcursionViewHolder> {
     class ExcursionViewHolder extends RecyclerView.ViewHolder{
         private final TextView excursionListItem;

@@ -61,6 +61,7 @@ public class ExcursionDetails extends AppCompatActivity {
 
         vacationId = getIntent().getIntExtra("vacationId", -1);
         excursionId = getIntent().getIntExtra("excursionId", -1);
+        //5a Retrieving excursion details passed through the intent
         title = getIntent().getStringExtra("excursionTitle");
         date = getIntent().getStringExtra("excursionStartDate");
 
@@ -73,7 +74,7 @@ public class ExcursionDetails extends AppCompatActivity {
             }
         }
 
-
+        //5a Setting excursion details to the TextViews
         if (title != null) {
             excursionTitleText.setText(title);
             excursionDateText.setText(date);
@@ -124,7 +125,7 @@ public class ExcursionDetails extends AppCompatActivity {
             this.finish();
             return true;
         }
-
+        //5b.Saving or updating excursion details
         if (id == R.id.excursion_save) {
 
             date = excursionDateText.getText().toString();
@@ -165,7 +166,7 @@ public class ExcursionDetails extends AppCompatActivity {
             return true;
         }
 
-
+        //5b. Deleting an excursion
         if (id == R.id.excursion_delete) {
 
             for (Excursion exc : eRepository.getAllExcursions()) {
@@ -177,7 +178,7 @@ public class ExcursionDetails extends AppCompatActivity {
             this.finish();
         }
 
-        if(id == R.id.excursion_alert){
+        if(id == R.id.excursion_alert){//5d. Alert that the user can set that will Trigger on the Excursion Date.
             String title = excursionTitleText.getText().toString();
             String dateFromScreen = excursionDateText.getText().toString();
             String myFormat = "MM/dd/yy"; //In which you need put here
@@ -206,7 +207,7 @@ public class ExcursionDetails extends AppCompatActivity {
 
     }
 
-    public boolean dateCheckExcursion(){
+    public boolean dateCheckExcursion(){ //5e. validation that the excursion date is during the associated vacation
 
         Date excursionStartDate = new Date();
         try{
@@ -236,7 +237,7 @@ public class ExcursionDetails extends AppCompatActivity {
         }
     }
 
-    public boolean dateValidation(String date){
+    public boolean dateValidation(String date){ //5c. logic to validate date format.
 
         if(date.trim().equals("")){
             return true;
