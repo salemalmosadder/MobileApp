@@ -31,7 +31,6 @@ import java.util.Locale;
 public class ExcursionDetails extends AppCompatActivity {
     EditText excursionTitleText;
     EditText excursionDateText;
-    //EditText excursionAlertText;
 
     int excursionId;
     int vacationId;
@@ -41,20 +40,15 @@ public class ExcursionDetails extends AppCompatActivity {
     String vacStartDate;
     String vacEndDate;
 
-    //String alertDateObject;
 
     final Calendar myCalendar = Calendar.getInstance();
 
     DatePickerDialog.OnDateSetListener excursionDateCalendar;
-    //DatePickerDialog.OnDateSetListener alertDateCalendar;
 
 
     Repository eRepository;
 
-    //int numExc;
     Excursion currentExc;
-    //Vacation currentVac;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,15 +58,12 @@ public class ExcursionDetails extends AppCompatActivity {
         eRepository = new Repository(getApplication());
         excursionTitleText = findViewById(R.id.excursion_title);
         excursionDateText = findViewById(R.id.excursion_date);
-        //excursionAlertText = findViewById(R.id.excursion_alert_date);
 
         vacationId = getIntent().getIntExtra("vacationId", -1);
         excursionId = getIntent().getIntExtra("excursionId", -1);
         title = getIntent().getStringExtra("excursionTitle");
         date = getIntent().getStringExtra("excursionStartDate");
 
-        //how to get data from another class object, create object list, modified for loop,
-        //matching variables from class to class, declare variable then set.
         List<Vacation> myVacations = eRepository.getAllVacations();
         for (Vacation v : myVacations){
             if(v.getVacationId() == vacationId){
@@ -82,12 +73,6 @@ public class ExcursionDetails extends AppCompatActivity {
             }
         }
 
-        /*
-        String myFormat = "MM/dd/yy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        excursionAlertText.setText(sdf.format(new Date()));
-
-         */
 
         if (title != null) {
             excursionTitleText.setText(title);
@@ -122,44 +107,6 @@ public class ExcursionDetails extends AppCompatActivity {
         });
 
 
-        /*
-        alertDateCalendar = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                // TODO Auto-generated method stub
-
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-                updateAlert();
-            }
-
-        };
-
-        excursionAlertText.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Date date;
-                //get value from other screen,but I'm going to hard code it right now
-                String info = excursionAlertText.getText().toString();
-                if (info.equals("")) info = "02/10/22";
-                try {
-                    myCalendar.setTime(sdf.parse(info));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                new DatePickerDialog(ExcursionDetails.this, alertDateCalendar, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
-         */
-
     }
 
     @Override
@@ -176,20 +123,17 @@ public class ExcursionDetails extends AppCompatActivity {
         if(id == android.R.id.home){
             this.finish();
             return true;
-        } //overriding the back button goes straight to onResume
+        }
 
         if (id == R.id.excursion_save) {
 
             date = excursionDateText.getText().toString();
-            //vacStartDate = currentVac.getVacationStartDate();
-            //vacEndDate = currentVac.getVacationEndDate();
 
             if (dateCheckExcursion() && dateValidation(date)) {
 
                 if (excursionId == -1) {
 
                     String title = excursionTitleText.getText().toString();
-                    //String date = excursionDateText.getText().toString();
 
                     Excursion newExcursion = new Excursion(0, vacationId, title, date);
 
@@ -228,8 +172,6 @@ public class ExcursionDetails extends AppCompatActivity {
                 if (exc.getExcursionId() == excursionId) currentExc = exc;
             }
 
-            //Integer.parseInt(String.valueOf(vacationId)))
-            //if()
             eRepository.delete(currentExc);
             Toast.makeText(ExcursionDetails.this, currentExc.getExcursionTitle() + " was deleted", Toast.LENGTH_LONG).show();
             this.finish();
@@ -246,7 +188,6 @@ public class ExcursionDetails extends AppCompatActivity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            //String titleS = excursionTitleText.getText().toString();
 
             try{
                 Long trigger = myDate.getTime();
@@ -317,15 +258,6 @@ public class ExcursionDetails extends AppCompatActivity {
         }
 
     }
-/*
-    private void updateAlert() {
-        String myFormat = "MM/dd/yy";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat,Locale.US);
-
-        excursionAlertText.setText(sdf.format(myCalendar.getTime()));
-    }
-
- */
 
     private void updateLabelDate() {
         String myFormat = "MM/dd/yy";

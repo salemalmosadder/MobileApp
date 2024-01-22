@@ -19,7 +19,6 @@ import androidx.core.app.NotificationCompat;
 import com.example.salemalmosadderd308.R;
 
 public class MyReceiver extends BroadcastReceiver {
-    //have to create through android so it registers in the manifest if its not in the manifest it wont work
 
     String channel_id = "test";
     static int notificationID;
@@ -38,11 +37,6 @@ public class MyReceiver extends BroadcastReceiver {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(notificationID++, n);
 
-
-        // TODO: This method is called when the BroadcastReceiver is receiving
-        // an Intent broadcast.
-        //throw new UnsupportedOperationException("Not yet implemented");
-
     }
 
 
@@ -59,8 +53,6 @@ public class MyReceiver extends BroadcastReceiver {
             channel.setDescription(description);
         }
 
-        //Register the channel with the system; you can change importance
-        //or other notification behaviors
 
         NotificationManager notificationManager =  context.getSystemService(NotificationManager.class);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

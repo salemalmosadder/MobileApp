@@ -39,7 +39,6 @@ public class VacationDetails extends AppCompatActivity {
     EditText vacationLodgingText;
     EditText vacationStartText;
     EditText vacationEndText;
-    //EditText alertInputText;
 
     int vacationId;
     String title;
@@ -67,12 +66,10 @@ public class VacationDetails extends AppCompatActivity {
         setContentView(R.layout.activity_vacation_details_excursion_list);
 
         repository = new Repository(getApplication());
-        //vacationIdText = findViewById(R.id.vacation);
         vacationTitleText = findViewById(R.id.vacation_title);
         vacationLodgingText = findViewById(R.id.vacation_lodging);
         vacationStartText = findViewById(R.id.startDate);
         vacationEndText = findViewById(R.id.endDate);
-        //alertInputText = findViewById(R.id.alert_date);
 
         vacationId = getIntent().getIntExtra("vacationId", -1);
         title = getIntent().getStringExtra("vacationTitle");
@@ -82,13 +79,9 @@ public class VacationDetails extends AppCompatActivity {
 
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        //alertInputText.setText(sdf.format(new Date()));
-
- //*/
 
         if (title != null) {
             vacationId = getIntent().getIntExtra("vacationId", -1);
-            //int vacNum = getIntent().getIntExtra("vacationId",0);
             String vacStringStart = getIntent().getStringExtra("vacStartDate");
             String vacStringEnd = getIntent().getStringExtra("vacEndDate");
             vacationTitleText.setText(title);

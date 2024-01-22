@@ -31,7 +31,7 @@ public class ExcursionAdapter extends RecyclerView.Adapter<ExcursionAdapter.Excu
                 @Override
                 public void onClick(View view) {
 
-                    String myFormat = "MM/dd/yy"; //In which you need put here
+                    String myFormat = "MM/dd/yy";
                     SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
                     int position = getAdapterPosition();
@@ -76,8 +76,6 @@ public class ExcursionAdapter extends RecyclerView.Adapter<ExcursionAdapter.Excu
             String title =  current.getExcursionTitle();
             holder.excursionListItem.setText(title);
 
-            //final Vacation current = mVacation.get(position);
-            //holder.vacationListItem.setText(current.getVacationTitle());
 
         }else{
             holder.excursionListItem.setText("No Title");

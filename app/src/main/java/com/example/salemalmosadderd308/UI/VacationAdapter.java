@@ -77,9 +77,6 @@ public class VacationAdapter extends RecyclerView.Adapter<VacationAdapter.Vacati
             String title =  current.getVacationTitle();
             holder.vacationListItem.setText(title);
 
-            //final Vacation current = mVacation.get(position);
-            //holder.vacationListItem.setText(current.getVacationTitle());
-
         }else{
             holder.vacationListItem.setText("No Title");
         }
