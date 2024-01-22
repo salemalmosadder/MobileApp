@@ -14,8 +14,8 @@ import java.util.List;
 // Created Vacation dao for B1
 @Dao
 public interface VacationDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(Vacation vacation);
+    @Insert(onConflict = OnConflictStrategy.IGNORE)            //B3 Connected The database using the DAO
+    void insert(Vacation vacation);                            //B3 Implemented CRUD
 
     @Update
     void update(Vacation vacation);
