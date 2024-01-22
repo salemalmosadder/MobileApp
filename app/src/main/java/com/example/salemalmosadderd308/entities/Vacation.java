@@ -4,6 +4,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+// Created Entity Vacation for Step B1
+
 @Entity(tableName = "Vacations")
 public class Vacation {
     @PrimaryKey(autoGenerate = true)

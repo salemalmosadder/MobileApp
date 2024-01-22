@@ -4,6 +4,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+// Created Entity Class Excursion for B1.
+
 @Entity(tableName = "Excursions")
 public class Excursion {
     @PrimaryKey(autoGenerate = true)

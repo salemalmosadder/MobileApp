@@ -11,6 +11,7 @@ import com.example.salemalmosadderd308.entities.Vacation;
 
 import java.util.List;
 
+// Created Vacation dao for B1
 @Dao
 public interface VacationDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)

@@ -11,6 +11,8 @@ import com.example.salemalmosadderd308.entities.Excursion;
 
 import java.util.List;
 
+// Created Excursion dao for B1
+
 @Dao
 public interface ExcursionDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)

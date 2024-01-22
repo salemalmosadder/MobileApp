@@ -11,6 +11,7 @@ import com.example.salemalmosadderd308.dao.VacationDao;
 import com.example.salemalmosadderd308.entities.Excursion;
 import com.example.salemalmosadderd308.entities.Vacation;
 
+// Set up the database for B1
 @Database(entities = {Vacation.class, Excursion.class}, version=2, exportSchema = false)
 public abstract class TravelDatabaseBuilder extends RoomDatabase {
     public abstract VacationDao VacationDao();
