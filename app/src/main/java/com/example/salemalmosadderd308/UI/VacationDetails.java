@@ -149,42 +149,7 @@ public class VacationDetails extends AppCompatActivity {
             }
         });
 
-        /*
-        alertDate = new DatePickerDialog.OnDateSetListener() {
 
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                // TODO Auto-generated method stub
-
-                myCalendarStart.set(Calendar.YEAR, year);
-                myCalendarStart.set(Calendar.MONTH, monthOfYear);
-                myCalendarStart.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-
-                updateLabelAlert();
-            }
-
-        };
-
-        alertInputText.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Date date; //date object, checking if empty and adding if empty
-                String info = alertInputText.getText().toString();
-                if (info.equals("")) info = "02/25/23";
-                try {
-                    myCalendarStart.setTime(sdf.parse(info));//<--- date object
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                new DatePickerDialog(VacationDetails.this, alertDate, myCalendarStart.get(Calendar.YEAR),
-                        myCalendarStart.get(Calendar.MONTH), myCalendarStart.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
-         */
 
         FloatingActionButton fab = findViewById(R.id.enter_excursion_details);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -201,18 +166,7 @@ public class VacationDetails extends AppCompatActivity {
             }
         });
 
-        /* spinner display
-        ArrayList<Excursion> excursionArrayList= new ArrayList<>();
-        excursionArrayList.addAll(repository.getAllExcursions());
-        ArrayList<String> excursionTitleList= new ArrayList<>();
-        for(Excursion e : excursionArrayList){
-            excursionTitleList.add(e.getExcursionTitle());
-        }
-        ArrayAdapter<String> excursionIdAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, excursionTitleList);
-        Spinner spinner = findViewById(R.id.excursion_list);
-        spinner.setAdapter(excursionIdAdapter);
 
-         */
 
         startDate = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -243,21 +197,12 @@ public class VacationDetails extends AppCompatActivity {
     }
 
     private void updateLabelStart() {
-        String myFormat = "MM/dd/yy"; //In which you need put here
+        String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         vacationStartText.setText(sdf.format(myCalendarStart.getTime()));
     }
 
-    /*
-    private void updateLabelAlert(){
-        String myFormat = "MM/dd/yy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
-        alertInputText.setText(sdf.format(myCalendarStart.getTime()));
-    }
-
-     */
 
     private void updateLabelEnd() {
         String myFormat = "MM/dd/yy";
@@ -343,25 +288,21 @@ public class VacationDetails extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item){
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.save) {
 
             start_date = vacationStartText.getText().toString();
             end_date = vacationEndText.getText().toString();
 
-            if (dateCheck() && dateValidationStart(start_date) && dateValidationEnd(end_date)) {
+            if (dateCheck() && dateValidationStart(start_date) && dateValidationEnd(end_date)) {               //Validation date inputs
 
                 if (vacationId == -1) {
 
                     String title = vacationTitleText.getText().toString();
                     String lodging = vacationLodgingText.getText().toString();
-                    //String start = vacationStartText.getText().toString();
-                    //String end = vacationEndText.getText().toString();
+
 
                     Vacation newVacation = new Vacation(0, title, lodging, start_date, end_date);
                     //Database knows a value cannot be zero and auto generate is set, so set the ID to zero in the constructor

@@ -26,7 +26,7 @@ public interface VacationDao {
     @Query("SELECT * FROM VACATIONS ORDER BY VACATIONID ASC")
     List<Vacation> getAllVacations();
 
-    @Query("SELECT * FROM VACATIONS WHERE VACATIONID = VACATIONID ORDER BY VACATIONID ASC")
+    @Query("SELECT * FROM VACATIONS WHERE VACATIONID = VACATIONID ORDER BY VACATIONID ASC")           //Validation Before deletion
     List<Vacation> getAllVacationsById();
 
 }
